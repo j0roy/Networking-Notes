@@ -1,11 +1,13 @@
 ---
-title: "Jo's Networking Notes"
+title: "Jo's Notes"
+image: "images/pen.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/jonathan-roy-/"
+output:
+  postcards::jolla
 ---
 
-This is a Quarto website.
+Welcome to my personal website. You'll find here some notes that I've been taking of the years. Most of them will probably be around networking/Cisco.
 
-To learn morehdgf about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+The idea is to share knowledge so we call all grow.
