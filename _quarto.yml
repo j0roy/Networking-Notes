@@ -27,8 +27,8 @@ website:
         contents: 
           - section: Switched campus
             contents:
-                - text: "Switch administration (MAC, MTU, Errdisable)"
-                  file: switch_administration.qmd 
+                - href: switch_administration.qmd 
+                  text: "Switch administration (MAC, MTU, Errdisable)"
                 - Layer 2 protocols (CDP, LLDP, UDLD)
                 - VLAN technologies
                 - EtherChannel
@@ -64,7 +64,6 @@ website:
                - Layer 2 multicast
                - Reverse path forwarding check
                - PIM                 
-      - section: Software Defined Infrastructure
       - section: Transport Technologies and Solutions   
         contents: 
           - section: MPLS
