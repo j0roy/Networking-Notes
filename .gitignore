@@ -2,8 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
-*.Rproj
-*.yml
-*.md
-
 /.quarto/

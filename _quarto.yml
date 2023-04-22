@@ -82,7 +82,7 @@ website:
                 - AAA
           - section: Network Security
             contents:
-                - section: Network Security
+                - section: Switch security features
                   contents:                    
                     - VACL, PACL
                     - Storm control                
