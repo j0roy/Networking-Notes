@@ -1,6 +1,5 @@
 ---
 title: "Jo's Notes"
-image: "images/pen.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/jonathan-roy-/"

@@ -23,10 +23,75 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - section: L3 Technologies
+      - section: Network Infrastructure
         contents: 
-          - Test1.qmd
-
+          - section: Switched campus
+            contents:
+                - Switch administration (MAC, MTU, Errdisable)
+                - Layer 2 protocols (CDP, LLDP, UDLD)
+                - VLAN technologies
+                - EtherChannel
+                - Spanning Tree Protocol
+          - section: Routing Concepts
+            contents:
+               - Administrative distance
+               - VRF-lite
+               - Static routing
+               - Policy Based Routing
+               - Route filtering
+               - Manual summarization
+               - Redistribution
+               - Routing protocol authentication
+               - Bidirectional Forwarding Detection
+          - section: EIGRP
+            contents:
+               - Concept
+               - Legacy conf mode
+               - Named conf mode
+          - section: OSPF
+            contents:
+               - Concept
+               - Version 2
+               - Version 3
+          - section: BGP
+            contents:
+               - Concept
+               - Path selection
+               - Configuration                             
+          - section: Multicast
+            contents:
+               - Layer 2 multicast
+               - Reverse path forwarding check
+               - PIM                 
+      - section: Software Defined Infrastructure
+      - section: Transport Technologies and Solutions   
+        contents: 
+          - section: MPLS
+            contents:
+                - Concept
+                - L3VPN
+          - section: DMVPN
+            contents:
+                - Concept
+                - Phase 1-2-3                
+      - section: Infrastructure Security and Services   
+        contents: 
+          - section: Device Security
+            contents:
+                - Control plane policing and protection
+                - AAA
+          - section: Network Security
+            contents:
+                - section: Network Security
+                  contents:                    
+                    - VACL, PACL
+                    - Storm control                
+                    - DHCP Snooping, DHCP option 82
+                    - IP Source Guard 
+                    - Dynamic ARP Inspection
+                    - Port Security                
+                    - Private VLAN
+                     
 format:
   html:
     theme: lumen
