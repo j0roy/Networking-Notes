@@ -741,25 +741,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="ospf" class="level2">
 <h2 class="anchored" data-anchor-id="ospf">OSPF</h2>
 <pre><code>router ospf 1
-distance ospf intra-area 105 inter-area 105 external 125</code></pre>
+  distance ospf intra-area 105 inter-area 105 external 125</code></pre>
 <p>Changes the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes</p>
 </section>
 <section id="eigrp" class="level2">
 <h2 class="anchored" data-anchor-id="eigrp">EIGRP</h2>
 <pre><code>router eigrp 100  
-distance eigrp 80 105</code></pre>
+  distance eigrp 80 105</code></pre>
 <p>Changes the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes</p>
 </section>
 <section id="bgp" class="level2">
 <h2 class="anchored" data-anchor-id="bgp">BGP</h2>
 <pre><code>router bgp 65001  
-distance bgp 30 200 220</code></pre>
+  distance bgp 30 200 220</code></pre>
+<p>Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP routes</p>
 </section>
 <section id="rip" class="level2">
 <h2 class="anchored" data-anchor-id="rip">RIP</h2>
 <pre><code>router rip
-distance 20 192.168.0.1 0.0.0.0</code></pre>
-<p>Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP</p>
+  distance 20 192.168.0.1 0.0.0.0</code></pre>
+<p>Changes the AD to 20 for a specific route.</p>
 <p><a href="https://www.ciscopress.com/articles/article.asp?p=2273507&amp;seqNum=14">Source Ciscopress</a></p>
 
 
