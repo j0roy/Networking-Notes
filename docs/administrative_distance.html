@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jo’s Networking Notes - Jo’s Notes</title>
+<title>Jo’s Networking Notes - Administrative distance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./switch_administration.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Jo's Networking Notes
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -103,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -645,14 +646,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#administrative-distance-table" id="toc-administrative-distance-table" class="nav-link active" data-scroll-target="#administrative-distance-table">Administrative distance table</a></li>
+  <li><a href="#change-protocol-administrative-distances" id="toc-change-protocol-administrative-distances" class="nav-link" data-scroll-target="#change-protocol-administrative-distances">Change protocol administrative distances</a>
+  <ul class="collapse">
+  <li><a href="#ospf" id="toc-ospf" class="nav-link" data-scroll-target="#ospf">OSPF</a></li>
+  <li><a href="#eigrp" id="toc-eigrp" class="nav-link" data-scroll-target="#eigrp">EIGRP</a></li>
+  <li><a href="#bgp" id="toc-bgp" class="nav-link" data-scroll-target="#bgp">BGP</a></li>
+  <li><a href="#rip" id="toc-rip" class="nav-link" data-scroll-target="#rip">RIP</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Jo’s Notes</h1>
+<h1 class="title">Administrative distance</h1>
 </div>
 
 
@@ -667,10 +681,87 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to my personal website. You’ll find here some notes that I’ve been taking of the years. Most of them will probably be around networking/Cisco.</p>
-<p>The idea is to share knowledge so we call all grow.</p>
+<section id="administrative-distance-table" class="level1">
+<h1>Administrative distance table</h1>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Route Source</th>
+<th style="text-align: center;">Default Distance Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Connected interface</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td>Static route</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td>EIGRP summary route</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td>EBGP</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>Internal EIGRP</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="even">
+<td>OSPF</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="odd">
+<td>IS-IS</td>
+<td style="text-align: center;">115</td>
+</tr>
+<tr class="even">
+<td>RIP</td>
+<td style="text-align: center;">120</td>
+</tr>
+<tr class="odd">
+<td>External EIGRP</td>
+<td style="text-align: center;">170</td>
+</tr>
+<tr class="even">
+<td>Internal BGP</td>
+<td style="text-align: center;">200</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="change-protocol-administrative-distances" class="level1">
+<h1>Change protocol administrative distances</h1>
+<section id="ospf" class="level2">
+<h2 class="anchored" data-anchor-id="ospf">OSPF</h2>
+<pre><code>router ospf 1
+distance ospf intra-area 105 inter-area 105 external 125</code></pre>
+<p>Changes the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes</p>
+</section>
+<section id="eigrp" class="level2">
+<h2 class="anchored" data-anchor-id="eigrp">EIGRP</h2>
+<p>router eigrp 100<br>
+distance eigrp 80 105</p>
+<p>Changes the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes</p>
+</section>
+<section id="bgp" class="level2">
+<h2 class="anchored" data-anchor-id="bgp">BGP</h2>
+<p>router bgp 65001<br>
+distance bgp 30 200 220</p>
+</section>
+<section id="rip" class="level2">
+<h2 class="anchored" data-anchor-id="rip">RIP</h2>
+<p>router rip distance 20 192.168.0.1 0.0.0.0</p>
+<p>Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP</p>
+<p><a href="https://www.ciscopress.com/articles/article.asp?p=2273507&amp;seqNum=14">Source Ciscopress</a></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -906,15 +997,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./switch_administration.html" class="pagination-link">
-        <span class="nav-page-text">Switch administration (MAC, MTU, Errdisable)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

@@ -91,7 +91,81 @@ website:
                     - Dynamic ARP Inspection
                     - Port Security                
                     - Private VLAN
-                     
+                    
+                - section: Router security features
+                  contents:                    
+                    - IPv6 Traffic Filters
+                    - IPv4 Access Control Lists              
+                    - Unicast Reverse Path Forwarding
+
+                - section: IPv6 infrastructure security features
+                  contents:                    
+                    - RA Guard
+                    - DHCP Guard             
+                    - Binding table
+                    - Device tracking
+                    - ND Inspection/Snooping             
+                    - Source Guard
+                -  IEEE 802.1X Port-Based Authentication
+                    
+          - section: System Management
+            contents:
+                - section: Device management
+                  contents:                    
+                    - Console and VTY
+                    - SSH, SCP         
+                    - RESTCONF, NETCONF
+                - SNMP
+                - Logging
+          - section: Quality of Service
+            contents:                    
+                - DiffServ    
+                - CoS and DSCP Mapping
+                - Classification
+                - Network Based Application Recognition (NBAR)
+                - Policing, shaping
+                - Congestion management and avoidance
+                
+          - section: Network Services
+            contents:                    
+                - section: First Hop Redundancy Protocols
+                  contents:                    
+                    - HSRP
+                    - GLBP, VRRP
+                    - Redundancy using IPv6 RS/RA
+                - Network Time Protocol
+                
+                - section: DHCP on Cisco IOS
+                  contents:                    
+                    - Client, server, relay
+                    - Options
+                    - SLAAC/DHCPv6 interaction  
+                    - Stateful, stateless DHCPv6
+                    - DHCPv6 Prefix Delegation
+
+                - section: IPv4 Network Address Translation
+                  contents:                    
+                    - Static NAT, PAT
+                    - Dynamic NAT, PAT
+                    - Policy-based NAT, PAT 
+                    - VRF-aware NAT, PAT
+                    - DHCPv6 Prefix Delegation                
+
+          - section: Network optimization
+            contents:
+              - IP SLA
+              - Tracking object
+              - Flexible NetFlow
+            
+          - section: Network operations
+            contents:                    
+                - section: Traffic capture
+                  contents:                    
+                    - SPAN
+                    - RSPAN
+                    - ERSPAN
+                    - Embedded Packet Capture
+   
 format:
   html:
     theme: lumen

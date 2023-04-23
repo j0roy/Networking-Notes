@@ -103,5 +103,40 @@
     "title": "switch_administration",
     "section": "",
     "text": "fdsa fdsa switch_administration"
+  },
+  {
+    "objectID": "administrative_distance.html",
+    "href": "administrative_distance.html",
+    "title": "Administrative distance",
+    "section": "",
+    "text": "Route Source\nDefault Distance Values\n\n\n\n\nConnected interface\n0\n\n\nStatic route\n1\n\n\nEIGRP summary route\n5\n\n\nEBGP\n20\n\n\nInternal EIGRP\n90\n\n\nOSPF\n110\n\n\nIS-IS\n115\n\n\nRIP\n120\n\n\nExternal EIGRP\n170\n\n\nInternal BGP\n200"
+  },
+  {
+    "objectID": "administrative_distance.html#ospf",
+    "href": "administrative_distance.html#ospf",
+    "title": "Administrative distance",
+    "section": "OSPF",
+    "text": "OSPF\nrouter ospf 1\ndistance ospf intra-area 105 inter-area 105 external 125\nChanges the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes"
+  },
+  {
+    "objectID": "administrative_distance.html#eigrp",
+    "href": "administrative_distance.html#eigrp",
+    "title": "Administrative distance",
+    "section": "EIGRP",
+    "text": "EIGRP\nrouter eigrp 100\ndistance eigrp 80 105\nChanges the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes"
+  },
+  {
+    "objectID": "administrative_distance.html#bgp",
+    "href": "administrative_distance.html#bgp",
+    "title": "Administrative distance",
+    "section": "BGP",
+    "text": "BGP\nrouter bgp 65001\ndistance bgp 30 200 220"
+  },
+  {
+    "objectID": "administrative_distance.html#rip",
+    "href": "administrative_distance.html#rip",
+    "title": "Administrative distance",
+    "section": "RIP",
+    "text": "RIP\nrouter rip distance 20 192.168.0.1 0.0.0.0\nChanges the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP\nSource Ciscopress"
   }
 ]
