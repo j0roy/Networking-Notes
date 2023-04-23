@@ -35,7 +35,8 @@ website:
                 - Spanning Tree Protocol
           - section: Routing Concepts
             contents:
-               - Administrative distance
+               - href: administrative_distance.qmd
+                 text: "Administrative distance"
                - VRF-lite
                - Static routing
                - Policy Based Routing
