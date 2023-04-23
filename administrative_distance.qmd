@@ -5,7 +5,7 @@ editor: visual
 # Administrative distance table
 
 
-| Route Source   |      Default Distance Values      |
+| Route Source  |  Default Distance Values |
 |----------|:-------------:|
 | Connected interface|0|
 | Static route |1|

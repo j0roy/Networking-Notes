@@ -1,1 +1,6 @@
 /* css styles */
+pre code {
+    color: #4169e1;
+    word-wrap: break-word;
+    background-color: #ecedf1;
+  }
