@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jo’s Networking Notes - Administrative distance</title>
+<title>Jo’s Networking Notes - CEF-RIB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./mpls_concept.html" rel="next">
-<link href="./switch_administration.html" rel="prev">
+<link href="./switch_administration.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Network Infrastructure</li><li class="breadcrumb-item"><a href="./administrative_distance.html">Routing Concepts</a></li><li class="breadcrumb-item"><a href="./administrative_distance.html">Administrative distance</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cef-rib.html">Network Infrastructure</a></li><li class="breadcrumb-item"><a href="./cef-rib.html">CEF Table(FIB) and Routing Table</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,6 +117,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cef-rib.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">CEF Table(FIB) and Routing Table</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
@@ -148,16 +154,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Routing Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./administrative_distance.html" class="sidebar-item-text sidebar-link active">
+  <a href="./administrative_distance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Administrative distance</span></a>
   </div>
 </li>
@@ -662,16 +668,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#administrative-distance-table" id="toc-administrative-distance-table" class="nav-link active" data-scroll-target="#administrative-distance-table">Administrative distance table</a></li>
-  <li><a href="#change-protocol-administrative-distances" id="toc-change-protocol-administrative-distances" class="nav-link" data-scroll-target="#change-protocol-administrative-distances">Change protocol administrative distances</a>
-  <ul class="collapse">
-  <li><a href="#ospf" id="toc-ospf" class="nav-link" data-scroll-target="#ospf">OSPF</a></li>
-  <li><a href="#eigrp" id="toc-eigrp" class="nav-link" data-scroll-target="#eigrp">EIGRP</a></li>
-  <li><a href="#bgp" id="toc-bgp" class="nav-link" data-scroll-target="#bgp">BGP</a></li>
-  <li><a href="#rip" id="toc-rip" class="nav-link" data-scroll-target="#rip">RIP</a></li>
-  </ul></li>
-  <li><a href="#floating-static-route" id="toc-floating-static-route" class="nav-link" data-scroll-target="#floating-static-route">Floating static route</a></li>
-  <li><a href="#administrative-distance-ouput" id="toc-administrative-distance-ouput" class="nav-link" data-scroll-target="#administrative-distance-ouput">Administrative distance ouput</a></li>
+  <li><a href="#cef-tablefib-and-routing-table" id="toc-cef-tablefib-and-routing-table" class="nav-link active" data-scroll-target="#cef-tablefib-and-routing-table">CEF Table(FIB) and Routing Table</a></li>
   </ul>
 </nav>
     </div>
@@ -680,7 +677,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Administrative distance</h1>
+<h1 class="title">CEF-RIB</h1>
 </div>
 
 
@@ -695,96 +692,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="administrative-distance-table" class="level1">
-<h1>Administrative distance table</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Route Source</th>
-<th style="text-align: center;">Default Distance Values</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Connected interface</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td>Static route</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td>EIGRP summary route</td>
-<td style="text-align: center;">5</td>
-</tr>
-<tr class="even">
-<td>EBGP</td>
-<td style="text-align: center;">20</td>
-</tr>
-<tr class="odd">
-<td>Internal EIGRP</td>
-<td style="text-align: center;">90</td>
-</tr>
-<tr class="even">
-<td>OSPF</td>
-<td style="text-align: center;">110</td>
-</tr>
-<tr class="odd">
-<td>IS-IS</td>
-<td style="text-align: center;">115</td>
-</tr>
-<tr class="even">
-<td>RIP</td>
-<td style="text-align: center;">120</td>
-</tr>
-<tr class="odd">
-<td>External EIGRP</td>
-<td style="text-align: center;">170</td>
-</tr>
-<tr class="even">
-<td>Internal BGP</td>
-<td style="text-align: center;">200</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="change-protocol-administrative-distances" class="level1">
-<h1>Change protocol administrative distances</h1>
-<section id="ospf" class="level2">
-<h2 class="anchored" data-anchor-id="ospf">OSPF</h2>
-<pre><code>router ospf 1
-  distance ospf intra-area 105 inter-area 105 external 125</code></pre>
-<p>Changes the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes</p>
-</section>
-<section id="eigrp" class="level2">
-<h2 class="anchored" data-anchor-id="eigrp">EIGRP</h2>
-<pre><code>router eigrp 100  
-  distance eigrp 80 105</code></pre>
-<p>Changes the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes</p>
-</section>
-<section id="bgp" class="level2">
-<h2 class="anchored" data-anchor-id="bgp">BGP</h2>
-<pre><code>router bgp 65001  
-  distance bgp 30 200 220</code></pre>
-<p>Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP routes</p>
-</section>
-<section id="rip" class="level2">
-<h2 class="anchored" data-anchor-id="rip">RIP</h2>
-<pre><code>router rip
-  distance 20 192.168.0.1 0.0.0.0</code></pre>
-<p>Changes the AD to 20 for a specific route.</p>
-</section>
-</section>
-<section id="floating-static-route" class="level1">
-<h1>Floating static route</h1>
-<p>A floating static route can be used as a backup route when there is a secondary path available. It will be use if the current route is gone.</p>
-</section>
-<section id="administrative-distance-ouput" class="level1">
-<h1>Administrative distance ouput</h1>
-<pre><code>show ip route 192.168.1.0
-Routing entry for 192.168.1.0/24
-Known via “eigrp 20“, distance 90, metric 2174976, type internal</code></pre>
-<p><a href="https://www.ciscopress.com/articles/article.asp?p=2273507&amp;seqNum=14">Source Ciscopress</a></p>
+<section id="cef-tablefib-and-routing-table" class="level1">
+<h1>CEF Table(FIB) and Routing Table</h1>
+<p>Cisco Express Forwarding (CEF) maintains two tables in the data plane.<br>
+- The Forwarding Information Base (FIB) maintains Layer 3 forwarding information<br>
+- the Adjacency Table maintains Layer 2 information for next hops listed in the FIB.<br>
+Using these tables, populated from a router’s IP routing table and ARP cache, CEF can efficiently make forwarding decisions.</p>
+<p><img src="https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg" class="img-fluid" data-fig-align="center" width="450"><br>
+<a href="https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg">Source pearsoncmg.com</a></p>
+<p><img src="http://www.patrickdenis.biz/wp-content/uploads/2016/05/Adjacency-table.jpg" class="img-fluid" data-fig-align="center" width="900"><br>
+<a href="https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg">Source patrickdenis.biz</a></p>
 
 
 </section>
@@ -1025,13 +942,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./switch_administration.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Switch administration (MAC, MTU, Errdisable)</span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./mpls_concept.html" class="pagination-link">
-        <span class="nav-page-text">Concept</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./switch_administration.html" class="pagination-link">
+        <span class="nav-page-text">Switch administration (MAC, MTU, Errdisable)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

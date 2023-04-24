@@ -69,7 +69,8 @@ website:
         contents: 
           - section: MPLS
             contents:
-                - Concept
+                - href: mpls_concept.qmd 
+                  text: "Concept"
                 - L3VPN
           - section: DMVPN
             contents:
@@ -98,6 +99,9 @@ website:
                     - IPv6 Traffic Filters
                     - IPv4 Access Control Lists              
                     - Unicast Reverse Path Forwarding
+                    - href: unicast_reverse_path_forwarding.qmd
+                      text: "Unicast reverse path forwardin uRPF"
+                    
 
                 - section: IPv6 infrastructure security features
                   contents:                    

@@ -2,50 +2,70 @@
 title: "Administrative distance"
 editor: visual
 ---
+
 # Administrative distance table
 
-
-| Route Source  |  Default Distance Values |
-|----------|:-------------:|
-| Connected interface|0|
-| Static route |1|
-| EIGRP summary route|5|
-| EBGP |20|
-| Internal EIGRP |90|
-| OSPF | 110 |
-| IS-IS |115|
-| RIP |    120   |
-| External EIGRP |170|
-| Internal BGP |200|
-
+| Route Source        | Default Distance Values |
+|---------------------|:-----------------------:|
+| Connected interface |            0            |
+| Static route        |            1            |
+| EIGRP summary route |            5            |
+| EBGP                |           20            |
+| Internal EIGRP      |           90            |
+| OSPF                |           110           |
+| IS-IS               |           115           |
+| RIP                 |           120           |
+| External EIGRP      |           170           |
+| Internal BGP        |           200           |
 
 # Change protocol administrative distances
 
 ## OSPF
-```
+
+```         
 router ospf 1
-distance ospf intra-area 105 inter-area 105 external 125
+  distance ospf intra-area 105 inter-area 105 external 125
 ```
 
 Changes the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes
 
 ## EIGRP
-```
+
+```         
 router eigrp 100  
-distance eigrp 80 105
+  distance eigrp 80 105
 ```
+
 Changes the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes
 
 ## BGP
-```
+
+```         
 router bgp 65001  
-distance bgp 30 200 220
+  distance bgp 30 200 220
 ```
+
+Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP routes
+
 ## RIP
-```
+
+```         
 router rip
-distance 20 192.168.0.1 0.0.0.0
+  distance 20 192.168.0.1 0.0.0.0
 ```
-Changes the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP 
+
+Changes the AD to 20 for a specific route.
+
+# Floating static route
+
+A floating static route can be used as a backup route when there is a secondary path available. It will be use if the current route is gone.
+
+# Administrative distance ouput
+
+```         
+show ip route 192.168.1.0
+Routing entry for 192.168.1.0/24
+Known via “eigrp 20“, distance 90, metric 2174976, type internal
+```
 
 [Source Ciscopress](https://www.ciscopress.com/articles/article.asp?p=2273507&seqNum=14)

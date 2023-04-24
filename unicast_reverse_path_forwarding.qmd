@@ -1,0 +1,25 @@
+---
+title: "Unicast reverse path forwarding"
+editor: visual
+---
+
+#Unicast reverse path forwarding
+
+Unicast Reverse Path Forwarding (URPF) is a mechanism for validating the source IP address of packets received on a router.
+
+A router configured with URPF performs a reverse path lookup in the FIB table to validate the presence of the source IP address.
+
+CEF (Cisco Express Forwarding) must be enabled on the IOS device for uRPF to work.\
+uRPF can operate in two modes: loose, strict.
+
+-   Loose: The router verifies the <u>source</u> IP can be reached via the routing table using any interface (other than a default route).
+-   Strict : The router verifies the <u>source</u> of the IP packet <u>arrives on the same interface the router would use to reach that source address</u> . Cause problem with asymmetric routing.
+
+```  
+interface GigabitEthernet0/0
+ip verify unicast source reachable-via any ###Loose
+ip verify unicast source reachable-via rx  ### Strict
+```  
+
+[Source cisco.com](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/system-security/76x/b-system-security-cg-76x-ncs540/implementing-urpf.pdf)  
+[ RFC 3704](https://www.ietf.org/rfc/rfc3704.txt)

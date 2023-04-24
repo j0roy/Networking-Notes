@@ -1,0 +1,25 @@
+---
+title: "mpls_concept"
+editor: visual
+---
+
+# MPLS Concept
+
+MPLS is a packet-forwarding technology which uses labels in order to make data forwarding decisions.\
+The label is imposed between the data link layer (Layer 2) header and network layer (Layer 3) header.
+
+Customer(C): IP-only routers internal to customer network Customer Edge(CE): C routers which face PE routers Provider Edge(PE): LSRs on the MPLS-IP boundary Provider(P: MPLS-only LSRs in provider network
+
+Label Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers. Label Switching Router(LSR): Any router performing label switching (MPLS).\
+Label-Switched Path(LSP):\
+Label Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol. Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets\
+Label FIB (LFIB): Routing database for labeled (MPLS) packets
+
+Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lookup
+
+
+
+[Source packetlife.net](https://packetlife.net/library/cheat-sheets/)
+
+
+

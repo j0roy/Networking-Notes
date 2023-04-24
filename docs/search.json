@@ -116,27 +116,55 @@
     "href": "administrative_distance.html#ospf",
     "title": "Administrative distance",
     "section": "OSPF",
-    "text": "OSPF\nrouter ospf 1\ndistance ospf intra-area 105 inter-area 105 external 125\nChanges the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes"
+    "text": "OSPF\nrouter ospf 1\n  distance ospf intra-area 105 inter-area 105 external 125\nChanges the AD to 105 for intra-area and interarea routes, and changes the AD to 125 for external routes"
   },
   {
     "objectID": "administrative_distance.html#eigrp",
     "href": "administrative_distance.html#eigrp",
     "title": "Administrative distance",
     "section": "EIGRP",
-    "text": "EIGRP\nrouter eigrp 100  \ndistance eigrp 80 105\nChanges the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes"
+    "text": "EIGRP\nrouter eigrp 100  \n  distance eigrp 80 105\nChanges the AD to 80 for internal EIGRP routes and changes the AD to 105 for EIGRP external routes"
   },
   {
     "objectID": "administrative_distance.html#bgp",
     "href": "administrative_distance.html#bgp",
     "title": "Administrative distance",
     "section": "BGP",
-    "text": "BGP\nrouter bgp 65001  \ndistance bgp 30 200 220"
+    "text": "BGP\nrouter bgp 65001  \n  distance bgp 30 200 220\nChanges the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP routes"
   },
   {
     "objectID": "administrative_distance.html#rip",
     "href": "administrative_distance.html#rip",
     "title": "Administrative distance",
     "section": "RIP",
-    "text": "RIP\nrouter rip\ndistance 20 192.168.0.1 0.0.0.0\nChanges the AD to 30 for external BGP routes, 200 for internal BGP routes and 220 for local BGP\nSource Ciscopress"
+    "text": "RIP\nrouter rip\n  distance 20 192.168.0.1 0.0.0.0\nChanges the AD to 20 for a specific route."
+  },
+  {
+    "objectID": "administrative_distance.html#floating-static-route",
+    "href": "administrative_distance.html#floating-static-route",
+    "title": "Administrative distance",
+    "section": "Floating static route",
+    "text": "Floating static route\nA floating static route can be used as a backup route when there is a secondary path available. It will be use if the current route is gone."
+  },
+  {
+    "objectID": "administrative_distance.html#find-the-administrative-distance-of-a-route.",
+    "href": "administrative_distance.html#find-the-administrative-distance-of-a-route.",
+    "title": "Administrative distance",
+    "section": "Find the administrative distance of a route.",
+    "text": "Find the administrative distance of a route.\nshow ip route 192.168.1.0\nRouting entry for 192.168.1.0/24\nKnown via “eigrp 20“, distance 90, metric 2174976, type internal\nSource Ciscopress"
+  },
+  {
+    "objectID": "unicast_reverse_path_forwarding.html",
+    "href": "unicast_reverse_path_forwarding.html",
+    "title": "Unicast reverse path forwarding",
+    "section": "",
+    "text": "#Unicast reverse path forwarding\nUnicast Reverse Path Forwarding (URPF) is a mechanism for validating the source IP address of packets received on a router.\nA router configured with URPF performs a reverse path lookup in the FIB table to validate the presence of the source IP address.\nCEF (Cisco Express Forwarding) must be enabled on the IOS device for uRPF to work.\nuRPF can operate in two modes: loose, strict.\n\nLoose: The router verifies the source IP can be reached via the routing table using any interface (other than a default route).\nStrict : The router verifies the source of the IP packet arrives on the same interface the router would use to reach that source address . Cause problem with asymmetric routing.\n\ninterface GigabitEthernet0/0\nip verify unicast source reachable-via any ###Loose\nip verify unicast source reachable-via rx  ### Strict\nSource cisco.com\nRFC 3704"
+  },
+  {
+    "objectID": "mpls_concept.html",
+    "href": "mpls_concept.html",
+    "title": "mpls_concept",
+    "section": "",
+    "text": "MPLS Concept\nMPLS is a packet-forwarding technology which uses labels in order to make data forwarding decisions.\nThe label is imposed between the data link layer (Layer 2) header and network layer (Layer 3) header.\nCustomer(C): IP-only routers internal to customer network Customer Edge(CE): C routers which face PE routers Provider Edge(PE): LSRs on the MPLS-IP boundary Provider(P: MPLS-only LSRs in provider network\nLabel Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers. Label Switching Router(LSR): Any router performing label switching (MPLS).\nLabel-Switched Path(LSP):\nLabel Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol. Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets\nLabel FIB (LFIB): Routing database for labeled (MPLS) packets\nPenultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lookup\nSource packetlife.net"
   }
 ]

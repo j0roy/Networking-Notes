@@ -4,7 +4,5 @@ pre code {
     word-wrap: break-word;
     background-color: #ecedf1;
   }
-#administrative-distance-table {
-      margin-left: 1.5em;
-      margin-right: 1.5em;
+#administrative-distance-table > .table {
 }
