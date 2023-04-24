@@ -13,10 +13,24 @@ Using these tables, populated from a router's IP routing table and ARP cache, CE
 ![](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg){width="450" fig-align="center"}\
 [Source pearsoncmg.com](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg)
 
-
 ![](http://www.patrickdenis.biz/wp-content/uploads/2016/05/Adjacency-table.jpg){width="900" fig-align="center"}\
 [Source patrickdenis.biz](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg)
 
+# CAM (Content-Addressable Memory)
 
-CAM (Content-Addressable Memory) table equal to the mac address table.  
-Mapping of of mac-address to a port
+The Cam table is equal to the mac address table.\
+All Catalyst switch models use a Content Addressable Memory (CAM) table for Layer 2 switching. As frames arrive on switch ports, the source MAC addresses are learned and recorded in the CAM table. The port of arrival and the VLAN are both recorded in the table, along with a timestamp.\
+By default, idle CAM table entries are kept for 300 seconds before they are deleted.
+
+```         
+mac address-table aging-time ###seconds
+mac address-table static ##mac-address vlan ##vlan-id interface gi1/0/1
+```
+
+[Source ciscopress.com](https://www.ciscopress.com/articles/article.asp?p=101629&seqNum=4)
+
+# Ternary Content Addressable Memory (TCAM)
+
+In multilayer switches, however, all of the matching process that ACLs provide is implemented in hardware.\
+TCAM allows a packet to be evaluated against an entire access list in a single table lookup.\
+Most switches have multiple TCAMs so that both inbound and outbound security and QoS ACLs can be evaluated simultaneously, or entirely in parallel with a Layer 2 or Layer 3 forwarding decision.

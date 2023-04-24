@@ -15,11 +15,29 @@ uRPF can operate in two modes: loose, strict.
 -   Loose: The router verifies the <u>source</u> IP can be reached via the routing table using any interface (other than a default route).
 -   Strict : The router verifies the <u>source</u> of the IP packet <u>arrives on the same interface the router would use to reach that source address</u> . Cause problem with asymmetric routing.
 
+#Verification commands
+
 ```  
 interface GigabitEthernet0/0
 ip verify unicast source reachable-via any ###Loose
 ip verify unicast source reachable-via rx  ### Strict
 ```  
+
+
+``` 
+sw1#show ip traffic | section Drop
+  Drop:  2614 encapsulation failed, 0 unresolved, 0 no adjacency
+         0 no route, 0 unicast RPF, 0 forced drop
+
+R1#show ip traffic | sec Drop
+  Drop:  0 encapsulation failed, 0 unresolved, 0 no adjacency
+         0 no route, 0 unicast RPF, 0 forced drop
+         
+R1#show cef interface gi 0/0
+GigabitEthernet0/0 is up (if_number 2)
+  IP unicast RPF check is disabled
+         
+``` 
 
 [Source cisco.com](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5xx/system-security/76x/b-system-security-cg-76x-ncs540/implementing-urpf.pdf)  
 [ RFC 3704](https://www.ietf.org/rfc/rfc3704.txt)

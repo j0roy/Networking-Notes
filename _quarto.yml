@@ -25,6 +25,8 @@ website:
         text: Welcome
       - section: Network Infrastructure
         contents: 
+          - href: cef-rib.qmd 
+            text: "CEF Table(FIB) and Routing Table"
           - section: Switched campus
             contents:
                 - href: switch_administration.qmd 

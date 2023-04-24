@@ -669,6 +669,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#cef-tablefib-and-routing-table" id="toc-cef-tablefib-and-routing-table" class="nav-link active" data-scroll-target="#cef-tablefib-and-routing-table">CEF Table(FIB) and Routing Table</a></li>
+  <li><a href="#cam-content-addressable-memory" id="toc-cam-content-addressable-memory" class="nav-link" data-scroll-target="#cam-content-addressable-memory">CAM (Content-Addressable Memory)</a></li>
+  <li><a href="#ternary-content-addressable-memory-tcam" id="toc-ternary-content-addressable-memory-tcam" class="nav-link" data-scroll-target="#ternary-content-addressable-memory-tcam">Ternary Content Addressable Memory (TCAM)</a></li>
   </ul>
 </nav>
     </div>
@@ -702,6 +704,21 @@ Using these tables, populated from a router’s IP routing table and ARP cache, 
 <a href="https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg">Source pearsoncmg.com</a></p>
 <p><img src="http://www.patrickdenis.biz/wp-content/uploads/2016/05/Adjacency-table.jpg" class="img-fluid" data-fig-align="center" width="900"><br>
 <a href="https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg">Source patrickdenis.biz</a></p>
+</section>
+<section id="cam-content-addressable-memory" class="level1">
+<h1>CAM (Content-Addressable Memory)</h1>
+<p>The Cam table is equal to the mac address table.<br>
+All Catalyst switch models use a Content Addressable Memory (CAM) table for Layer 2 switching. As frames arrive on switch ports, the source MAC addresses are learned and recorded in the CAM table. The port of arrival and the VLAN are both recorded in the table, along with a timestamp.<br>
+By default, idle CAM table entries are kept for 300 seconds before they are deleted.</p>
+<pre><code>mac address-table aging-time ###seconds
+mac address-table static ##mac-address vlan ##vlan-id interface gi1/0/1</code></pre>
+<p><a href="https://www.ciscopress.com/articles/article.asp?p=101629&amp;seqNum=4">Source ciscopress.com</a></p>
+</section>
+<section id="ternary-content-addressable-memory-tcam" class="level1">
+<h1>Ternary Content Addressable Memory (TCAM)</h1>
+<p>In multilayer switches, however, all of the matching process that ACLs provide is implemented in hardware.<br>
+TCAM allows a packet to be evaluated against an entire access list in a single table lookup.<br>
+Most switches have multiple TCAMs so that both inbound and outbound security and QoS ACLs can be evaluated simultaneously, or entirely in parallel with a Layer 2 or Layer 3 forwarding decision.</p>
 
 
 </section>
