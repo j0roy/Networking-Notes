@@ -10,11 +10,11 @@ Cisco Express Forwarding (CEF) maintains two tables in the data plane.\
 - the Adjacency Table maintains Layer 2 information for next hops listed in the FIB.\
 Using these tables, populated from a router's IP routing table and ARP cache, CEF can efficiently make forwarding decisions.
 
-![](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg){width="450" fig-align="center"}\
+![](images/cef-rib.jpg){width="450" fig-align="center"}\
 [Source pearsoncmg.com](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg)
 
-![](http://www.patrickdenis.biz/wp-content/uploads/2016/05/Adjacency-table.jpg){width="900" fig-align="center"}\
-[Source patrickdenis.biz](https://ptgmedia.pearsoncmg.com/images/chap3_9781587205613/elementLinks/03fig06_alt.jpg)
+![](images/adj-table.jpg){width="900" fig-align="center"}\
+[Source patrickdenis.biz](http://www.patrickdenis.biz/wp-content/uploads/2016/05/Adjacency-table.jpg)
 
 # CAM (Content-Addressable Memory)
 
