@@ -1,0 +1,24 @@
+---
+title: "IPv6 traffic filter"
+editor: visual
+---
+
+# IPv6 traffic filter / ACL
+
+There no number ipv6 ACL, just named ACL.\
+Their is only extended IPv6 ACL.\
+Standard doesn't exist with IPv6.\
+IPv6 don't use wildcard.
+
+More specific at the top. Large at the bottom.  
+Implicit allow ND Neighbor discovery messages(NA,NS) before the last deny.  
+permit icmp any nd 
+Implicit deny at the end.
+
+```         
+interface gi0/0
+ipv6 traffic-filter block_sites_ACL out
+
+
+show ipv6 access-list
+```
