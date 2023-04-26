@@ -1,0 +1,20 @@
+---
+title: "copp"
+editor: visual
+---
+
+-   
+
+# Cisco Control Plane Policing CoPP
+
+CoPP protect the control plane of a device by filtering and policing traffic flow that are going to the control plane.\
+It protect against reconnaissance and denial-of-service (DoS) attacks.
+
+-   Create ACLs to identify the traffic.
+-   Create class maps to define a traffic class(Match ACL).
+-   Create policy maps top define a service policy (Using class maps).
+-   Apply service policy to the control plane.
+
+```         
+show policy-map control-plane
+```

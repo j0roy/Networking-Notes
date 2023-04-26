@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jo’s Networking Notes - mpls_concept</title>
+<title>Jo’s Networking Notes - IPv6_snooping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./unicast_reverse_path_forwarding.html" rel="next">
-<link href="./administrative_distance.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +72,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Transport Technologies and Solutions</li><li class="breadcrumb-item"><a href="./mpls_concept.html">MPLS</a></li><li class="breadcrumb-item"><a href="./mpls_concept.html">Concept</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Jo's Networking Notes
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -277,25 +277,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
  <span class="menu-text">Transport Technologies and Solutions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
  <span class="menu-text">MPLS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mpls_concept.html" class="sidebar-item-text sidebar-link active">
+  <a href="./mpls_concept.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concept</span></a>
   </div>
 </li>
@@ -656,7 +656,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mpls-concept" id="toc-mpls-concept" class="nav-link active" data-scroll-target="#mpls-concept">MPLS Concept</a></li>
+  <li><a href="#ipv6-snooping" id="toc-ipv6-snooping" class="nav-link active" data-scroll-target="#ipv6-snooping">IPv6 Snooping</a></li>
   </ul>
 </nav>
     </div>
@@ -665,7 +665,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mpls_concept</h1>
+<h1 class="title">IPv6_snooping</h1>
 </div>
 
 
@@ -680,17 +680,26 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="mpls-concept" class="level1">
-<h1>MPLS Concept</h1>
-<p>MPLS is a packet-forwarding technology which uses labels in order to make data forwarding decisions.<br>
-The label is imposed between the data link layer (Layer 2) header and network layer (Layer 3) header.</p>
-<p>Customer(C): IP-only routers internal to customer network Customer Edge(CE): C routers which face PE routers Provider Edge(PE): LSRs on the MPLS-IP boundary Provider(P: MPLS-only LSRs in provider network</p>
-<p>Label Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers. Label Switching Router(LSR): Any router performing label switching (MPLS).<br>
-Label-Switched Path(LSP):<br>
-Label Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol. Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets<br>
-Label FIB (LFIB): Routing database for labeled (MPLS) packets</p>
-<p>Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lookup</p>
-<p><a href="https://packetlife.net/library/cheat-sheets/">Source packetlife.net</a></p>
+<section id="ipv6-snooping" class="level1">
+<h1>IPv6 Snooping</h1>
+<p>IPv6 Address feature:<br>
+ICMPv6 Neighbor Discovery (ND)<br>
+NS Neighbor soliciation<br>
+NA Neighbor adevertisement<br>
+RS Router solicitation<br>
+RA Router Advertisement<br>
+Duplicate address detction (DAD)<br>
+Stateless address autoconfiguration SLAAC(EUI-64)<br>
+DHCPv6</p>
+<p>ND for new hosts on the network<br>
+1. Asign a link-local address<br>
+2.Check if link-local address is unique (DAD)<br>
+3.Announce it self as a live host,link-local. (NA)<br>
+4.Find a router/gateway (RS or received RA)<br>
+5.Receive RA information (Router ip and mac + gateway + prefixss/subnetss info)<br>
+6. Host chooses a global prefix for SLAAC<br>
+7.Check if global address is unique (DAD)<br>
+8.Announce it self as a live host,global. (NA)</p>
 
 
 </section>
@@ -929,18 +938,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./administrative_distance.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Administrative distance</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./unicast_reverse_path_forwarding.html" class="pagination-link">
-        <span class="nav-page-text">Unicast reverse path forwardin uRPF</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

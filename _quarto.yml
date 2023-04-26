@@ -103,16 +103,8 @@ website:
                     - Unicast Reverse Path Forwarding
                     - href: unicast_reverse_path_forwarding.qmd
                       text: "Unicast reverse path forwardin uRPF"
-                    
+                - IPv6 First Hop security features
 
-                - section: IPv6 infrastructure security features
-                  contents:                    
-                    - RA Guard
-                    - DHCP Guard             
-                    - Binding table
-                    - Device tracking
-                    - ND Inspection/Snooping             
-                    - Source Guard
                 -  IEEE 802.1X Port-Based Authentication
                     
           - section: System Management

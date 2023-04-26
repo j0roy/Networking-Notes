@@ -3,7 +3,4 @@ title: "switch_administration"
 editor: visual
 ---
 
-
-fdsa
-fdsa
-switch_administration
+fdsa fdsa switch_administration

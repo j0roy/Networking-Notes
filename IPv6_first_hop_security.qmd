@@ -1,0 +1,36 @@
+---
+title: "IPv6 First Hop security features"
+editor: visual
+---
+
+# IPv6 Address feature:
+
+ICMPv6 Neighbor Discovery (ND)\
+NS Neighbor soliciation\
+NA Neighbor adevertisement\
+RS Router solicitation\
+RA Router Advertisement\
+Duplicate address detction (DAD)\
+Stateless address autoconfiguration SLAAC(EUI-64)\
+DHCPv6
+
+# ND for new hosts on the network
+
+1.Asign a link-local address\
+2.Check if link-local address is unique (DAD)\
+3.Announce it self as a live host,link-local. (NA)\
+4.Find a router/gateway (RS or received RA)\
+5.Receive RA information (Router ip and mac + gateway + prefixss/subnetss info)\
+6.Host chooses a global prefix for SLAAC\
+7.Check if global address is unique (DAD)\
+8.Announce it self as a live host,global. (NA)
+
+# IPv6 First Hop security features
+
+IPv6 snooping: Build from DHCPv6 and NDP messages. (similar to DAI) Build neighbor binding table through IPv6 neighbor tracking. Prevent host spoofing on the segment On Vlan or on interface.
+
+RA Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.
+
+DHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.
+
+IPv6 Source-gurad: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.

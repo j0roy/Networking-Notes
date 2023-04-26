@@ -17,9 +17,4 @@ Label FIB (LFIB): Routing database for labeled (MPLS) packets
 
 Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lookup
 
-
-
 [Source packetlife.net](https://packetlife.net/library/cheat-sheets/)
-
-
-

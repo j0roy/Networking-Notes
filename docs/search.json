@@ -173,5 +173,26 @@
     "title": "CEF-RIB",
     "section": "",
     "text": "CEF Table(FIB) and Routing Table\nCisco Express Forwarding (CEF) maintains two tables in the data plane.\n- The Forwarding Information Base (FIB) maintains Layer 3 forwarding information\n- the Adjacency Table maintains Layer 2 information for next hops listed in the FIB.\nUsing these tables, populated from a router’s IP routing table and ARP cache, CEF can efficiently make forwarding decisions.\n\nSource pearsoncmg.com\n\nSource patrickdenis.biz\n\n\nCAM (Content-Addressable Memory)\nThe Cam table is equal to the mac address table.\nAll Catalyst switch models use a Content Addressable Memory (CAM) table for Layer 2 switching. As frames arrive on switch ports, the source MAC addresses are learned and recorded in the CAM table. The port of arrival and the VLAN are both recorded in the table, along with a timestamp.\nBy default, idle CAM table entries are kept for 300 seconds before they are deleted.\nmac address-table aging-time ###seconds\nmac address-table static ##mac-address vlan ##vlan-id interface gi1/0/1\nSource ciscopress.com\n\n\nTernary Content Addressable Memory (TCAM)\nIn multilayer switches, however, all of the matching process that ACLs provide is implemented in hardware.\nTCAM allows a packet to be evaluated against an entire access list in a single table lookup.\nMost switches have multiple TCAMs so that both inbound and outbound security and QoS ACLs can be evaluated simultaneously, or entirely in parallel with a Layer 2 or Layer 3 forwarding decision."
+  },
+  {
+    "objectID": "IPv6_snooping.html",
+    "href": "IPv6_snooping.html",
+    "title": "IPv6_snooping",
+    "section": "",
+    "text": "IPv6 Snooping\nIPv6 Address feature:\nICMPv6 Neighbor Discovery (ND)\nNS Neighbor soliciation\nNA Neighbor adevertisement\nRS Router solicitation\nRA Router Advertisement\nDuplicate address detction (DAD)\nStateless address autoconfiguration SLAAC(EUI-64)\nDHCPv6\nND for new hosts on the network\n1. Asign a link-local address\n2.Check if link-local address is unique (DAD)\n3.Announce it self as a live host,link-local. (NA)\n4.Find a router/gateway (RS or received RA)\n5.Receive RA information (Router ip and mac + gateway + prefixss/subnetss info)\n6. Host chooses a global prefix for SLAAC\n7.Check if global address is unique (DAD)\n8.Announce it self as a live host,global. (NA)"
+  },
+  {
+    "objectID": "copp.html",
+    "href": "copp.html",
+    "title": "copp",
+    "section": "",
+    "text": "Cisco Control Plane Policing CoPP\nCoPP protect the control plane of a device by filtering and policing traffic flow that are going to the control plane.\nIt protect against reconnaissance and denial-of-service (DoS) attacks.\n\nCreate ACLs to identify the traffic.\nCreate class maps to define a traffic class(Match ACL).\nCreate policy maps top define a service policy (Using class maps).\nApply service policy to the control plane.\n\nshow policy-map control-plane"
+  },
+  {
+    "objectID": "IPv6_first_hop_security.html",
+    "href": "IPv6_first_hop_security.html",
+    "title": "IPv6 First Hop security features",
+    "section": "",
+    "text": "IPv6 Address feature:\nICMPv6 Neighbor Discovery (ND)\nNS Neighbor soliciation\nNA Neighbor adevertisement\nRS Router solicitation\nRA Router Advertisement\nDuplicate address detction (DAD)\nStateless address autoconfiguration SLAAC(EUI-64)\nDHCPv6\n\n\nND for new hosts on the network\n1.Asign a link-local address\n2.Check if link-local address is unique (DAD)\n3.Announce it self as a live host,link-local. (NA)\n4.Find a router/gateway (RS or received RA)\n5.Receive RA information (Router ip and mac + gateway + prefixss/subnetss info)\n6.Host chooses a global prefix for SLAAC\n7.Check if global address is unique (DAD)\n8.Announce it self as a live host,global. (NA)\n\n\nIPv6 First Hop security features\nIPv6 snooping: Build from DHCPv6 and NDP messages. (similar to DAI) Build neighbor binding table through IPv6 neighbor tracking. Prevent host spoofing on the segment On Vlan or on interface.\nRA Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.\nDHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.\nIPv6 Source-gurad: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table."
   }
 ]
