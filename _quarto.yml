@@ -100,7 +100,8 @@ website:
                     
                 - section: Router security features
                   contents:                    
-                    - IPv6 Traffic Filters
+                    - href: IPv6-traffic-filter.qmd
+                      text: "IPv6 Traffic Filters"
                     - IPv4 Access Control Lists              
                     - Unicast Reverse Path Forwarding
                     - href: unicast_reverse_path_forwarding.qmd

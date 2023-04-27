@@ -1,6 +1,8 @@
 ---
 title: "IPv6 First Hop security features"
 editor: visual
+date: last-modified
+date-format: long
 ---
 
 # IPv6 Address feature:

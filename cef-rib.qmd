@@ -1,6 +1,8 @@
 ---
 title: "CEF-RIB"
 editor: visual
+date: last-modified
+date-format: long
 ---
 
 # CEF Table(FIB) and Routing Table

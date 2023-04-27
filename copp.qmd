@@ -1,6 +1,8 @@
 ---
 title: "copp"
 editor: visual
+date: last-modified
+date-format: long
 ---
 
 -   

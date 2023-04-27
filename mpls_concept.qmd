@@ -1,6 +1,8 @@
 ---
 title: "mpls_concept"
 editor: visual
+date: last-modified
+date-format: long
 ---
 
 # MPLS Concept

@@ -1,6 +1,8 @@
 ---
 title: "Administrative distance"
 editor: visual
+date: last-modified
+date-format: long
 ---
 
 # Administrative distance table

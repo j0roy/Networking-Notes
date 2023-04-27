@@ -2,7 +2,7 @@
 title: "IPv6 traffic filter"
 editor: visual
 date: last-modified
-date-format: short
+date-format: long
 ---
 
 # IPv6 traffic filter / ACL
