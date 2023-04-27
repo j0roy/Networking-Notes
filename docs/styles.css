@@ -6,3 +6,7 @@ pre code {
   }
 #administrative-distance-table > .table {
 }
+.sidebar-item-section > ul > .sidebar-item  {
+  margin-left: 0.5em;
+
+}

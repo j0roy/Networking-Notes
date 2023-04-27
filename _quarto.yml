@@ -6,9 +6,11 @@ website:
   page-navigation: true
   reader-mode: false
   title: "Jo's Networking Notes"
+  
 
   
   sidebar:
+    border: true
     background: dark
     logo: ""
     pinned: true
@@ -170,6 +172,11 @@ format:
     theme: lumen
     css: styles.css
     toc: true
+    grid:
+      sidebar-width: 300px
+      body-width: 800px
+      margin-width: 250px
+      gutter-width: 1.5rem
 
 
 
