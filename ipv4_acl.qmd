@@ -1,0 +1,50 @@
+---
+title: "ipv4_acl"
+editor: visual
+date: last-modified
+date-format: long
+---
+
+# IPv4 Access Control Lists
+
+access control list (ACL)\
+access control entries (ACE)
+
+Standard ACL 1-99, 1300-1999\
+Only match on source.
+
+Extended ACL 100-199, 2000-2699.\
+Match on source, destination, protocol and more ...
+
+Numbered ACLs,add sequence automatically
+
+```         
+access-list 1 permit 172.16.0.0 0.0.255.255
+access-list 1 permit 172.17.0.0 0.0.255.255
+```
+
+Named ACLs
+
+```         
+ip access-list extended FTP-port
+ permit tcp 192.168.0.0 0.0.0.255 any eq ftp
+```
+
+```         
+interface gi 0/0
+ip access-group FTP-port in
+
+
+show ip interaface gig 0/0
+outgoing access list is list111
+Inbound access list is FTP-port
+```
+
+ACL don't block router generated traffic.\
+Be careful if you assign an ACL that is not already created. Has soon you add one ACE in it. The ACL will because active and might block undesirable traffic.
+
+#Time-based Access Control Lists
+
+
+
+

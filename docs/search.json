@@ -201,5 +201,12 @@
     "title": "IPv6 traffic filter",
     "section": "",
     "text": "IPv6 traffic filter / ACL\nThere no number ipv6 ACL, just named ACL.\nTheir is only extended IPv6 ACL.\nStandard doesn’t exist with IPv6.\nIPv6 don’t use wildcard.\nMore specific at the top. Large at the bottom.\nImplicit allow ND Neighbor discovery messages(NA,NS) before the last deny.\npermit icmp any nd Implicit deny at the end.\ninterface gi0/0\nipv6 traffic-filter block_sites_ACL out\n\n\nshow ipv6 access-list"
+  },
+  {
+    "objectID": "ipv4_acl.html",
+    "href": "ipv4_acl.html",
+    "title": "ipv4_acl",
+    "section": "",
+    "text": "IPv4 Access Control Lists\naccess control list (ACL)\naccess control entries (ACE)\nStandard ACL 1-99, 1300-1999\nOnly match on source.\nExtended ACL 100-199, 2000-2699.\nMatch on source, destination, protocol and more …\nNumbered ACLs,add sequence automatically\naccess-list 1 permit 172.16.0.0 0.0.255.255\naccess-list 1 permit 172.17.0.0 0.0.255.255\nNamed ACLs\nip access-list extended FTP-port\n permit tcp 192.168.0.0 0.0.0.255 any eq ftp\ninterface gi 0/0\nip access-group FTP-port in\n\n\nshow ip interaface gig 0/0\noutgoing access list is list111\nInbound access list is FTP-port\nACL don’t block router generated traffic.\nBe careful if you assign an ACL that is not already created. Has soon you add one ACE in it. The ACL will because active and might block undesirable traffic."
   }
 ]
