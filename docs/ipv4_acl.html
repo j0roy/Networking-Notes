@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-04-27">
+<meta name="dcterms.date" content="2023-04-28">
 
 <title>Jo’s Networking Notes - ipv4_acl</title>
 <style>
@@ -653,6 +653,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#ipv4-access-control-lists" id="toc-ipv4-access-control-lists" class="nav-link active" data-scroll-target="#ipv4-access-control-lists">IPv4 Access Control Lists</a></li>
+  <li><a href="#time-based-access-control-lists" id="toc-time-based-access-control-lists" class="nav-link" data-scroll-target="#time-based-access-control-lists">Time-based Access Control Lists</a></li>
   </ul>
 </nav>
     </div>
@@ -672,7 +673,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2023</p>
+      <p class="date">April 28, 2023</p>
     </div>
   </div>
   
@@ -705,6 +706,19 @@ outgoing access list is list111
 Inbound access list is FTP-port</code></pre>
 <p>ACL don’t block router generated traffic.<br>
 Be careful if you assign an ACL that is not already created. Has soon you add one ACE in it. The ACL will because active and might block undesirable traffic.</p>
+</section>
+<section id="time-based-access-control-lists" class="level1">
+<h1>Time-based Access Control Lists</h1>
+<p>Important to have a sync NTP status.<br>
+If the time-range is not meet the ACE is ignore.<br>
+Time-range cannot exceed one day.</p>
+<pre><code>time-range LateOclock
+periodic weekdays 22:00 to 23:59
+
+ip access-list extended TIME-ACL
+deny ip any any  time-range LateOclock&lt;
+
+show time-range</code></pre>
 
 
 </section>

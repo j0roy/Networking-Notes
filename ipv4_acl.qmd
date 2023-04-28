@@ -43,8 +43,18 @@ Inbound access list is FTP-port
 ACL don't block router generated traffic.\
 Be careful if you assign an ACL that is not already created. Has soon you add one ACE in it. The ACL will because active and might block undesirable traffic.
 
-#Time-based Access Control Lists
+# Time-based Access Control Lists
 
+Important to have a sync NTP status.\
+If the time-range is not meet the ACE is ignore.\
+Time-range cannot exceed one day.
 
+```         
+time-range LateOclock
+periodic weekdays 22:00 to 23:59
 
+ip access-list extended TIME-ACL
+deny ip any any  time-range LateOclock<
 
+show time-range
+```
