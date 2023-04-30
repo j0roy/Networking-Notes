@@ -7,6 +7,18 @@ output:
   postcards::jolla
 ---
 
-Welcome to my personal website. You'll find here some notes that I've been taking of the years. Most of them will probably be around networking/Cisco.
+# About me
 
-The idea is to share knowledge so we call all grow.
+I am a Network consultant based in QC,Canada and I work mostly with Cisco gear in the enterprise LAN and DC space.\
+Aside from route/switch, firewall security is the third fields that I'm being more attracted to, which will probably be my next cert.\
+I often find myself using automation tool/scripting to make my life/work easier, which I enjoy a lot.
+
+# Purpose of the site
+
+This website serves as a technical networking blog.  
+You will find information related to the topics that appear in Cisco certification blueprints and a little bit more.  
+
+# Disclaimer
+**The opinions expressed on this site are solely my own and do not express the views or opinions of my employer.\
+This page is run as an independent blog.\
+Thank you.**
