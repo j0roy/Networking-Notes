@@ -74,8 +74,9 @@ website:
           - section: MPLS
             contents:
                 - href: mpls_concept.qmd 
-                  text: "Concept"
-                - L3VPN
+                  text: "MPLS Concept"
+                - href: mpls_layer_3 _vpn.qmd 
+                  text: "MPLS Layer 3 VPN"
           - section: DMVPN
             contents:
                 - Concept
