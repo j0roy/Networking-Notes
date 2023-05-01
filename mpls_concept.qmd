@@ -10,13 +10,49 @@ date-format: long
 MPLS is a packet-forwarding technology which uses labels in order to make data forwarding decisions.\
 The label is imposed between the data link layer (Layer 2) header and network layer (Layer 3) header.
 
-Customer(C): IP-only routers internal to customer network Customer Edge(CE): C routers which face PE routers Provider Edge(PE): LSRs on the MPLS-IP boundary Provider(P: MPLS-only LSRs in provider network
+Customer(C): IP-only routers internal to customer network\
+Customer Edge(CE): C routers which face PE routers\
+Provider Edge(PE): LSRs on the MPLS-IP boundary\
+Provider(P): MPLS-only LSRs in provider network
 
-Label Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers. Label Switching Router(LSR): Any router performing label switching (MPLS).\
+Label Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers.\
+Label Switching Router(LSR): Any router performing label switching (MPLS).\
 Label-Switched Path(LSP):\
-Label Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol. Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets\
+Label Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol.\
+Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets\
 Label FIB (LFIB): Routing database for labeled (MPLS) packets
 
-Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lookup
+Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lockup
 
-[Source packetlife.net](https://packetlife.net/library/cheat-sheets/)
+When activate on a router, the router will create a label for each router that is has in it's routing table.\
+Afterward the router will share their correspondence label/network with their MPLS peers.\
+The router will then build a database of label/network that their neighbor send them in order to know which label to put when forwarding packet with label to them.
+
+Push label: Add a MPLS label/header to packet. Swap label: Changing the label in a packet. Pop label: remove the MPLS label/header from a packet.
+
+```         
+#Global
+mpls ip  
+interface gig0/0  
+mpls ip  
+
+#Local Label and remote  
+show mpls ldp binding  
+show mpls ldp binding 10.0.0.0 8  
+
+show mpls forwarding-table 
+
+#See that it's using MPLS
+traceroute 10.0.0.1
+
+show mpls ldp neighbor
+
+##For Lab, global
+mpls label range 100 199
+```
+
+# MPLS forwarding decision
+
+An MPLS network/label should be learn by all directed connected LSR. The router will look in it's routing table to find which next hop IP it will need to forward the packet.\
+Afterward it will look which LDP neighbors has that IP address and forward it to him via the right MPLs label.
+
