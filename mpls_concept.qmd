@@ -55,4 +55,3 @@ mpls label range 100 199
 
 An MPLS network/label should be learn by all directed connected LSR. The router will look in it's routing table to find which next hop IP it will need to forward the packet.\
 Afterward it will look which LDP neighbors has that IP address and forward it to him via the right MPLs label.
-

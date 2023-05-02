@@ -1,0 +1,18 @@
+---
+title: "VRF-lite"
+editor: visual
+date: last-modified
+date-format: long
+---
+
+Two ways to create vRF:
+
+
+```
+###Work only with IPv4
+ip vrf GUEST
+
+###Work with IPv4 and IPv6
+vrf definition GUEST
+
+```

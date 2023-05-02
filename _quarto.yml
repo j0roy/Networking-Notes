@@ -41,7 +41,8 @@ website:
             contents:
                - href: administrative_distance.qmd
                  text: "Administrative distance"
-               - VRF-lite
+               - href: vrf-lite.qmd
+                 text: "VRF-lite"
                - Static routing
                - Policy Based Routing
                - Route filtering

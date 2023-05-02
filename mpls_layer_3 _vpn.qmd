@@ -7,4 +7,35 @@ date-format: long
 
 # MPLS Layer 3 VPN
 
+Provider requirement:
+Routing protocol  PE-CE
+Routing internal provider
+VRFs
+iBGP between PE (Route reflector for big network)
+MPLS
 
+Customer requirement:
+Routing protocol  PE-CE
+
+
+Route distinguisher: RD distinguishes one set of routes (of one VRF) from another, by adding the RD number to the prefix that it share via MP-BGP, 
+
+Route target(extended community)(import/export) are associate with VRF
+
+```
+###Work only with IPv4
+ip vrf GUEST
+
+###Work with IPv4 and IPv6
+vrf definition GUEST_01
+rd 111:333
+address-family ipv4
+route-target export 111
+route-target import 333
+
+interface gig0/0
+vrf forwarding GUEST_01
+
+```
+
+[Source packetlife.net](https://packetlife.net/blog/2013/jun/10/route-distinguishers-and-route-targets)
