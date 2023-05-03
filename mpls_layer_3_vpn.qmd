@@ -29,7 +29,7 @@ ip vrf GUEST
 
 ###Work with IPv4 and IPv6
 vrf definition GUEST_01
-rd 111:333
+rd 111:222
 address-family ipv4
 route-target export 111:222
 route-target import 333:444
@@ -39,4 +39,25 @@ vrf forwarding GUEST_01
 
 ```
 
+# MPLS Layer 3 VPN implmentation
+1.On the P network configure routing and MPLs to that the PE can all reach themself. 
+2.Create VRF for customer on PE router and assign interface to it. 
+3.Configure dynamic routing protocol between CE and PE in the customer VRF(any IGP work).
+4.On PE router, configure IBGP neighbor with the following parameter for the :
+-Next-hop-self
+-update-source loopbak X
+-use vpnv4 with the neighbors 
+-activate extended community
+5.Redistribute the IGP protocol from the customer VRF into BGP. 
+6.Configure the route-target import/export on the VRF on the PE. 
+7.Redistribute the BGP route into the IGP.  
+
+
+```
+show ip bgp vpnv4 all
+show bgp vpnv4 unicast vrf
+show bgp vpnv4 unicast rd 111:222
+
+
+```
 [Source packetlife.net](https://packetlife.net/blog/2013/jun/10/route-distinguishers-and-route-targets)

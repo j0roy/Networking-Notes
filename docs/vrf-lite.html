@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2023-05-01">
 
-<title>Jo’s Networking Notes - mpls_concept</title>
+<title>Jo’s Networking Notes - VRF-lite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./mpls_layer_3 _vpn.html" rel="next">
-<link href="./vrf-lite.html" rel="prev">
+<link href="./mpls_concept.html" rel="next">
+<link href="./administrative_distance.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Transport Technologies and Solutions</li><li class="breadcrumb-item"><a href="./mpls_concept.html">MPLS</a></li><li class="breadcrumb-item"><a href="./mpls_concept.html">MPLS Concept</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cef-rib.html">Network Infrastructure</a></li><li class="breadcrumb-item"><a href="./administrative_distance.html">Routing Concepts</a></li><li class="breadcrumb-item"><a href="./vrf-lite.html">VRF-lite</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,13 +111,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Network Infrastructure</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cef-rib.html" class="sidebar-item-text sidebar-link">
@@ -155,13 +155,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Routing Concepts</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./administrative_distance.html" class="sidebar-item-text sidebar-link">
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vrf-lite.html" class="sidebar-item-text sidebar-link">
+  <a href="./vrf-lite.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">VRF-lite</span></a>
   </div>
 </li>
@@ -281,25 +281,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
  <span class="menu-text">Transport Technologies and Solutions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
  <span class="menu-text">MPLS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mpls_concept.html" class="sidebar-item-text sidebar-link active">
+  <a href="./mpls_concept.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MPLS Concept</span></a>
   </div>
 </li>
@@ -654,21 +654,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#mpls-concept" id="toc-mpls-concept" class="nav-link active" data-scroll-target="#mpls-concept">MPLS Concept</a></li>
-  <li><a href="#mpls-forwarding-decision" id="toc-mpls-forwarding-decision" class="nav-link" data-scroll-target="#mpls-forwarding-decision">MPLS forwarding decision</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mpls_concept</h1>
+<h1 class="title">VRF-lite</h1>
 </div>
 
 
@@ -689,51 +682,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="mpls-concept" class="level1">
-<h1>MPLS Concept</h1>
-<p>MPLS is a packet-forwarding technology which uses labels in order to make data forwarding decisions.<br>
-The label is imposed between the data link layer (Layer 2) header and network layer (Layer 3) header.</p>
-<p>Customer(C): IP-only routers internal to customer network<br>
-Customer Edge(CE): C routers which face PE routers<br>
-Provider Edge(PE): LSRs on the MPLS-IP boundary<br>
-Provider(P): MPLS-only LSRs in provider network</p>
-<p>Label Distribution Protocol(LDP): protocol that automatically generates and exchanges labels between routers.<br>
-Label Switching Router(LSR): Any router performing label switching (MPLS).<br>
-Label-Switched Path(LSP):<br>
-Label Information Base (LIB): Contains all labels learned by an LSR via a label distribution protocol.<br>
-Forwarding Information Base(FIB): Routing database for unlabeled (IP) packets<br>
-Label FIB (LFIB): Routing database for labeled (MPLS) packets</p>
-<p>Penultimate Hop Popping (PHP): The second-to-last LSR in an LSP removes the MPLS label so the last LSR only has to perform an IP lockup</p>
-<p>When activate on a router, the router will create a label for each router that is has in it’s routing table.<br>
-Afterward the router will share their correspondence label/network with their MPLS peers.<br>
-The router will then build a database of label/network that their neighbor send them in order to know which label to put when forwarding packet with label to them.</p>
-<p>Push label: Add a MPLS label/header to packet. Swap label: Changing the label in a packet. Pop label: remove the MPLS label/header from a packet.</p>
-<pre><code>#Global
-mpls ip  
-interface gig0/0  
-mpls ip  
+<p>Two ways to create vRF:</p>
+<pre><code>###Work only with IPv4
+ip vrf GUEST
 
-#Local Label and remote  
-show mpls ldp binding  
-show mpls ldp binding 10.0.0.0 8  
-
-show mpls forwarding-table 
-
-#See that it's using MPLS
-traceroute 10.0.0.1
-
-show mpls ldp neighbor
-
-##For Lab, global
-mpls label range 100 199</code></pre>
-</section>
-<section id="mpls-forwarding-decision" class="level1">
-<h1>MPLS forwarding decision</h1>
-<p>An MPLS network/label should be learn by all directed connected LSR. The router will look in it’s routing table to find which next hop IP it will need to forward the packet.<br>
-Afterward it will look which LDP neighbors has that IP address and forward it to him via the right MPLs label.</p>
+###Work with IPv4 and IPv6
+vrf definition GUEST
+</code></pre>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -971,13 +928,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./vrf-lite.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">VRF-lite</span>
+      <a href="./administrative_distance.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Administrative distance</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./mpls_layer_3 _vpn.html" class="pagination-link">
-        <span class="nav-page-text">MPLS Layer 3 VPN</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./mpls_concept.html" class="pagination-link">
+        <span class="nav-page-text">MPLS Concept</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
