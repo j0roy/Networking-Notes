@@ -18,9 +18,10 @@ Customer requirement:
 Routing protocol  PE-CE
 
 
-Route distinguisher: RD distinguishes one set of routes (of one VRF) from another, by adding the RD number to the prefix that it share via MP-BGP, 
+Route distinguisher: It's purpose is to uniquely identify prefix on a single router.
+Each time a route is learn in a VRF, it will be pretended by the RD so that it can differentiate an identical prefix between VRF. 
 
-Route target(extended community)(import/export) are associate with VRF
+Route target: is an extended BGP community that is associate with a particular VRF. Route target can be Import or export via MP-BGP
 
 ```
 ###Work only with IPv4
@@ -30,8 +31,8 @@ ip vrf GUEST
 vrf definition GUEST_01
 rd 111:333
 address-family ipv4
-route-target export 111
-route-target import 333
+route-target export 111:222
+route-target import 333:444
 
 interface gig0/0
 vrf forwarding GUEST_01
