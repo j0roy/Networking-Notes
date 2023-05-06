@@ -79,8 +79,9 @@ website:
                 - href: mpls_layer_3_vpn.qmd 
                   text: "MPLS Layer 3 VPN"
           - section: DMVPN
-            contents:
-                - Concept
+            contents: 
+                - href: dmvpn_concept.qmd 
+                  text: "DMVPN Concept"
                 - Phase 1-2-3                
       - section: Infrastructure Security and Services   
         contents: 

@@ -1,0 +1,27 @@
+---
+title: "dmvpn_concept"
+editor: visual
+date: last-modified
+date-format: long
+---
+
+# DMVPN Concept
+
+TThe Dynamic Multipoint VPN (DMVPN) feature combines GRE tunnels, IPsec encryption, and NHRP routing.\
+[Source cisco.com](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_dmvpn/configuration/15-mt/sec-conn-dmvpn-15-mt-book/sec-conn-dmvpn-dmvpn.html) Three phase exist and each of them add functionnality to the last phase. Similar to version.
+
+# DMVPN Phase 1
+
+Designed for Hub and Spoke communications only.\
+- Spokes talk to each other through the hub.\
+
+# DMVPN Phase 2
+
+-   Spoke to Spoke communications are now working since they are using mGRE tunnel.\
+
+# DMVPN Phase 3
+
+-   Ability to add explicit route summarization.(large deployment,Send summary route instead of thousand of spoke route)
+-   Support multi-tiers design
+-   Hub can now redirect flow.Tell the spoke about a better path via nhrp
+-   Spoke can now use shortcut: NHRP is allowed to overwrite CEF.

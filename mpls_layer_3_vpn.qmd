@@ -28,6 +28,7 @@ Route target: is an extended BGP community that is associate with a particular V
 ip vrf GUEST
 
 ###Work with IPv4 and IPv6
+###PE router
 vrf definition GUEST_01
 rd 111:222
 address-family ipv4
@@ -55,8 +56,9 @@ vrf forwarding GUEST_01
 
 ```
 show ip bgp vpnv4 all
-show bgp vpnv4 unicast vrf
 show bgp vpnv4 unicast rd 111:222
+show bgp vpnv4 unicast vrf GUEST_01
+show bgp vpnv4 unicast vrf GUEST_01 labels
 
 
 ```
