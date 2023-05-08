@@ -130,6 +130,9 @@ router eigrp 100
  ip nhrp shortcut
 ```
 
+# DMVPN Lab
+
 ![](images/dmvpn-lab-01.png){fig-align="center"}\
 
+EVE-NG Typologies without DMVPN configuration, basic connectivity done.\
 [dmvpn-lab-01_clean.zip](attachements/dmvpn-lab-01_clean.zip)\
