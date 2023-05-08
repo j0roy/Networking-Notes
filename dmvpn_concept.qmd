@@ -129,9 +129,7 @@ router eigrp 100
 #Same has phase 1+2 add the following
  ip nhrp shortcut
 ```
-![](images/dmvpn-lab-01.png){width="450" fig-align="center"}\
 
+![](images/dmvpn-lab-01.png){fig-align="center"}\
 
-![](attachements/dmvpn-lab-01_clean.zip){width="450" fig-align="center"}\
-
-
+[dmvpn-lab-01_clean.zip](attachements/dmvpn-lab-01_clean.zip)\
