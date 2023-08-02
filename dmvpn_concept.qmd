@@ -18,6 +18,8 @@ Designed for Hub and Spoke communications only.\
 # DMVPN Phase 2
 
 -   Spoke to Spoke communications are now working since they are using mGRE tunnel.\
+mGRE everywhere.\
+Next-hop point to spoke instead of hub.\
 
 # DMVPN Phase 3
 
@@ -53,10 +55,10 @@ interface Tunnel100
   exit-af-topology
   network 10.0.0.0 0.0.0.255
   network 192.168.15.0 0.0.0.3
+  af-interface tunnel 100
+  no split-horizon
  exit-address-family
  
- interface Tunnel100
- no ip split-horizon eigrp 100
 
  #Optionnal
  ip mtu 1400
@@ -103,10 +105,25 @@ interface Tunnel100
  tunnel key 7777
 ```
 
-# DMVPN HUB Configuration Phase 2 No IPSEC
+# DMVPN HUB/SPOKE Configuration Phase 1 IPSEC
+```
+crypto isakmp policy 10
+ authentication pre-share
+crypto isakmp key cisco address 0.0.0.0        
+crypto ipsec transform-set SET1 esp-3des esp-md5-hmac 
+ mode tunnel
+crypto ipsec profile IP1
+ set transform-set SET1 
+
+interface tunnel 100
+tunnel protection ipsec profile IP1
+```
+
+# DMVPN HUB Configuration Phase 2
 
 ```         
 #Same has phase 1 add the following
+interface tunnel 100
  no ip next-hop-self eigrp 1
 ```
 
@@ -117,14 +134,14 @@ interface Tunnel100
  tunnel mode gre multipoint
 ```
 
-# DMVPN HUB Configuration Phase 2 No IPSEC
+# DMVPN HUB Configuration Phase 3
 
 ```         
 #Same has phase 1+2 add the following
  ip nhrp redirect
 ```
 
-# DMVPN Spoke1 Configuration Phase 2
+# DMVPN Spoke1 Configuration Phase 3
 
 ```         
 #Same has phase 1+2 add the following
