@@ -23,7 +23,7 @@ Next-hop point to spoke instead of hub.\
 
 # DMVPN Phase 3
 
--   Ability to add explicit route summarization.(large deployment,Send summary route instead of thousand of spoke route)
+-   Ability to add explicit route summarization(large deployment,Send summary route instead of thousand of spoke route)
 -   Support multi-tiers design
 -   Hub can now redirect flow.Tell the spoke about a better path via nhrp
 -   Spoke can now use shortcut: NHRP is allowed to overwrite CEF.

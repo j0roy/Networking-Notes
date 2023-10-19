@@ -1,0 +1,57 @@
+---
+title: "Firepower_Notes"
+editor: visual
+date: last-modified
+date-format: long
+---
+
+# firepower Notes
+
+## Connections Between FTD and FMC
+
+Configure manager\
+configure manager add \[hostname \| ip address \] \[registration key \]\
+configure manager add MC.example.com 123456\
+show managers\
+show network\
+ping system fmc_ip (from the Management interface)\
+
+## Interface type
+
+Type of interface\
+
+Routed mode interface Inline set Inline set with tap mode Passive Passive ERSPAN
+
+-   Management Interface
+    -   Set up and register the FTD to FMC
+    -   Use static routing
+    -   configure network
+-   Diagnostic Interface
+    -   interface is optional
+    -   does not allow through traffic
+    -   useful for SNMP or syslog monitoring.
+-   Routed mode interface
+-   Inline set
+-   Inline set with tap
+-   mode Passive
+-   Passive ERSPAN
+
+## Active Standby Failover
+
+-   The FTD s - same model; same software; same number of interfaces
+-   You must have a failover link
+-   You can optionally add a separate state link - or you can use a shared link for both failover and state
+-   Various actions can trigger failover
+
+## Clustering
+
+Clustering is only available on certain models (9300 and 4100)\
+Enable active/active FTD\
+Use Cluster Control Link PO48\
+The routing process only runs on the control unit, routes are replicated to secondaries.\
+
+## Link Redundancy
+
+Feature on ASA only, with mean deprecated.\
+A pair of physical interfaces: an active and a standby interface, similar to HA, but with interface\
+Use in rare case, new standard is port-channel + LCAP.

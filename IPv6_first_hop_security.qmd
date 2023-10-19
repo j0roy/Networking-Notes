@@ -29,10 +29,10 @@ DHCPv6
 
 # IPv6 First Hop security features
 
-IPv6 snooping: Build from DHCPv6 and NDP messages. (similar to DAI) Build neighbor binding table through IPv6 neighbor tracking. Prevent host spoofing on the segment On Vlan or on interface.
+IPv6 snooping: Build from DHCPv6 and NDP messages. (similar to DAI) Build a database of layer 2 and layer 3 addressing correlation through IPv6 neighbor discovery. Prevent host spoofing on the segment On Vlan or on interface.
 
-RA Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.
+RA(Router Advertisement) Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.
 
 DHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.
 
-IPv6 Source-gurad: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.
+IPv6 Source-guard: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.
