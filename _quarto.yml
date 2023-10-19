@@ -169,10 +169,11 @@ website:
                     - RSPAN
                     - ERSPAN
                     - Embedded Packet Capture
-          - section: Cisco Firepower
-            contents:  
-                    - href: Firepower_notes.qmd 
-                      text: "FTD Notes"          
+      - section: Cisco Firepower   
+        contents: 
+          - href: Firepower_notes.qmd
+            text: "FTD Notes"
+        
    
 format:
   html:
