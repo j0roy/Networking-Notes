@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-05-04">
+<meta name="dcterms.date" content="2023-10-18">
 
 <title>Jo’s Networking Notes - MPLS Layer 3 VPN</title>
 <style>
@@ -637,6 +637,23 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" aria-expanded="false">
+ <span class="menu-text">Cisco Firepower</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./firepower_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FTD Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -668,7 +685,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 4, 2023</p>
+      <p class="date">October 18, 2023</p>
     </div>
   </div>
   
@@ -696,8 +713,7 @@ route-target export 111:222
 route-target import 333:444
 
 interface gig0/0
-vrf forwarding GUEST_01
-</code></pre>
+vrf forwarding GUEST_01</code></pre>
 </section>
 <section id="mpls-layer-3-vpn-implmentation" class="level1">
 <h1>MPLS Layer 3 VPN implmentation</h1>
@@ -705,9 +721,7 @@ vrf forwarding GUEST_01
 <pre><code>show ip bgp vpnv4 all
 show bgp vpnv4 unicast rd 111:222
 show bgp vpnv4 unicast vrf GUEST_01
-show bgp vpnv4 unicast vrf GUEST_01 labels
-
-</code></pre>
+show bgp vpnv4 unicast vrf GUEST_01 labels</code></pre>
 <p><a href="https://packetlife.net/blog/2013/jun/10/route-distinguishers-and-route-targets">Source packetlife.net</a></p>
 
 

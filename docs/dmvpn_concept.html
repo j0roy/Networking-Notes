@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-05-08">
+<meta name="dcterms.date" content="2023-08-01">
 
 <title>Jo’s Networking Notes - dmvpn_concept</title>
 <style>
@@ -637,6 +637,23 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" aria-expanded="false">
+ <span class="menu-text">Cisco Firepower</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./firepower_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FTD Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -651,12 +668,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#dmvpn-phase-1" id="toc-dmvpn-phase-1" class="nav-link" data-scroll-target="#dmvpn-phase-1">DMVPN Phase 1</a></li>
   <li><a href="#dmvpn-phase-2" id="toc-dmvpn-phase-2" class="nav-link" data-scroll-target="#dmvpn-phase-2">DMVPN Phase 2</a></li>
   <li><a href="#dmvpn-phase-3" id="toc-dmvpn-phase-3" class="nav-link" data-scroll-target="#dmvpn-phase-3">DMVPN Phase 3</a></li>
-  <li><a href="#dmvpn-hub-configuration-phage-1-no-ipsec" id="toc-dmvpn-hub-configuration-phage-1-no-ipsec" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phage-1-no-ipsec">DMVPN HUB Configuration Phage 1 No IPSEC</a></li>
-  <li><a href="#dmvpn-spoke1-configuration-phage-1" id="toc-dmvpn-spoke1-configuration-phage-1" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phage-1">DMVPN Spoke1 Configuration Phage 1</a></li>
-  <li><a href="#dmvpn-hub-configuration-phage-2-no-ipsec" id="toc-dmvpn-hub-configuration-phage-2-no-ipsec" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phage-2-no-ipsec">DMVPN HUB Configuration Phage 2 No IPSEC</a></li>
-  <li><a href="#dmvpn-spoke1-configuration-phage-2" id="toc-dmvpn-spoke1-configuration-phage-2" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phage-2">DMVPN Spoke1 Configuration Phage 2</a></li>
-  <li><a href="#dmvpn-hub-configuration-phage-2-no-ipsec-1" id="toc-dmvpn-hub-configuration-phage-2-no-ipsec-1" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phage-2-no-ipsec-1">DMVPN HUB Configuration Phage 2 No IPSEC</a></li>
-  <li><a href="#dmvpn-spoke1-configuration-phage-2-1" id="toc-dmvpn-spoke1-configuration-phage-2-1" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phage-2-1">DMVPN Spoke1 Configuration Phage 2</a></li>
+  <li><a href="#dmvpn-hub-configuration-phase-1-no-ipsec" id="toc-dmvpn-hub-configuration-phase-1-no-ipsec" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phase-1-no-ipsec">DMVPN HUB Configuration Phase 1 No IPSEC</a></li>
+  <li><a href="#dmvpn-spoke1-configuration-phase-1" id="toc-dmvpn-spoke1-configuration-phase-1" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phase-1">DMVPN Spoke1 Configuration Phase 1</a></li>
+  <li><a href="#dmvpn-hubspoke-configuration-phase-1-ipsec" id="toc-dmvpn-hubspoke-configuration-phase-1-ipsec" class="nav-link" data-scroll-target="#dmvpn-hubspoke-configuration-phase-1-ipsec">DMVPN HUB/SPOKE Configuration Phase 1 IPSEC</a></li>
+  <li><a href="#dmvpn-hub-configuration-phase-2" id="toc-dmvpn-hub-configuration-phase-2" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phase-2">DMVPN HUB Configuration Phase 2</a></li>
+  <li><a href="#dmvpn-spoke1-configuration-phase-2" id="toc-dmvpn-spoke1-configuration-phase-2" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phase-2">DMVPN Spoke1 Configuration Phase 2</a></li>
+  <li><a href="#dmvpn-hub-configuration-phase-3" id="toc-dmvpn-hub-configuration-phase-3" class="nav-link" data-scroll-target="#dmvpn-hub-configuration-phase-3">DMVPN HUB Configuration Phase 3</a></li>
+  <li><a href="#dmvpn-spoke1-configuration-phase-3" id="toc-dmvpn-spoke1-configuration-phase-3" class="nav-link" data-scroll-target="#dmvpn-spoke1-configuration-phase-3">DMVPN Spoke1 Configuration Phase 3</a></li>
+  <li><a href="#dmvpn-lab" id="toc-dmvpn-lab" class="nav-link" data-scroll-target="#dmvpn-lab">DMVPN Lab</a></li>
   </ul>
 </nav>
     </div>
@@ -676,7 +695,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 8, 2023</p>
+      <p class="date">August 1, 2023</p>
     </div>
   </div>
   
@@ -701,20 +720,22 @@ ul.task-list li input[type="checkbox"] {
 <h1>DMVPN Phase 2</h1>
 <ul>
 <li>Spoke to Spoke communications are now working since they are using mGRE tunnel.<br>
+mGRE everywhere.<br>
+Next-hop point to spoke instead of hub.<br>
 </li>
 </ul>
 </section>
 <section id="dmvpn-phase-3" class="level1">
 <h1>DMVPN Phase 3</h1>
 <ul>
-<li>Ability to add explicit route summarization.(large deployment,Send summary route instead of thousand of spoke route)</li>
+<li>Ability to add explicit route summarization(large deployment,Send summary route instead of thousand of spoke route)</li>
 <li>Support multi-tiers design</li>
 <li>Hub can now redirect flow.Tell the spoke about a better path via nhrp</li>
 <li>Spoke can now use shortcut: NHRP is allowed to overwrite CEF.</li>
 </ul>
 </section>
-<section id="dmvpn-hub-configuration-phage-1-no-ipsec" class="level1">
-<h1>DMVPN HUB Configuration Phage 1 No IPSEC</h1>
+<section id="dmvpn-hub-configuration-phase-1-no-ipsec" class="level1">
+<h1>DMVPN HUB Configuration Phase 1 No IPSEC</h1>
 <pre><code>interface GigabitEthernet0/0
  ip address 1.10.10.1 255.255.255.0
 !
@@ -723,36 +744,34 @@ interface GigabitEthernet0/1
  
 ip route 0.0.0.0 0.0.0.0 1.10.10.2
 
-interface Tunnel0
+
  #Required
- ip address 10.0.0.10 255.255.255.0
- no ip split-horizon eigrp 100
- ip nhrp network-id 30
+interface Tunnel100
+ ip address 10.0.0.1 255.255.255.0
+ ip nhrp network-id 134
+ ip nhrp map multicast dynamic
  tunnel source GigabitEthernet0/0
  tunnel mode gre multipoint
  
- #Optionnal
- bandwidth 1000
- no ip redirects
- ip mtu 1400
- ip nhrp authentication MYpass1
- ip tcp adjust-mss 1360
- delay 1000
- tunnel key 7777
- 
-router eigrp dmvpnlab
- !
+#Required Routing
+ router eigrp dmvpnlab
  address-family ipv4 unicast autonomous-system 100
-  !
   topology base
   exit-af-topology
   network 10.0.0.0 0.0.0.255
   network 192.168.15.0 0.0.0.3
+  af-interface tunnel 100
+  no split-horizon
  exit-address-family
-!</code></pre>
+ 
+
+ #Optionnal
+ ip mtu 1400
+ ip nhrp authentication MYpass1
+ tunnel key 7777</code></pre>
 </section>
-<section id="dmvpn-spoke1-configuration-phage-1" class="level1">
-<h1>DMVPN Spoke1 Configuration Phage 1</h1>
+<section id="dmvpn-spoke1-configuration-phase-1" class="level1">
+<h1>DMVPN Spoke1 Configuration Phase 1</h1>
 <pre><code>interface GigabitEthernet0/0
  ip address 1.1.1.1 255.255.255.0
 
@@ -761,53 +780,74 @@ interface GigabitEthernet0/1
  
 ip route 0.0.0.0 0.0.0.0 1.1.1.2
 
-interface Tunnel0
+interface Tunnel100
  #Required
- ip address 10.0.0.1 255.255.255.0
- no ip split-horizon eigrp 100
- ip nhrp network-id 30
- ip nhrp nhs 10.0.0.10 nbma 1.10.10.1 multicast
+ ip address 10.0.0.2 255.255.255.0
+ ip nhrp map 10.0.0.1 1.10.10.1
+ ip nhrp map multicast 1.10.10.1
+ ip nhrp network-id 134
+ ip nhrp nhs 10.0.0.1
  tunnel source GigabitEthernet0/0
  tunnel destination 1.10.10.1
- no ip split-horizon eigrp 100 #Required EIGRP
+ 
+#Required Routing
+ router eigrp dmvpnlab
+ address-family ipv4 unicast autonomous-system 100
+  topology base
+  exit-af-topology
+  network 10.0.0.0 0.0.0.255
+  network 192.168.101.0 0.0.0.255
+ exit-address-family
+ 
+ interface Tunnel100
+ no ip split-horizon eigrp 100
  
  #Optionnal
- bandwidth 1000
- no ip redirects
  ip mtu 1400
  ip nhrp authentication MYpass1
- ip tcp adjust-mss 1360
- delay 1000
- tunnel key 7777
-!
-
-router eigrp 100
- network 10.0.0.0
- network 192.168.101.0</code></pre>
+ tunnel key 7777</code></pre>
 </section>
-<section id="dmvpn-hub-configuration-phage-2-no-ipsec" class="level1">
-<h1>DMVPN HUB Configuration Phage 2 No IPSEC</h1>
+<section id="dmvpn-hubspoke-configuration-phase-1-ipsec" class="level1">
+<h1>DMVPN HUB/SPOKE Configuration Phase 1 IPSEC</h1>
+<pre><code>crypto isakmp policy 10
+ authentication pre-share
+crypto isakmp key cisco address 0.0.0.0        
+crypto ipsec transform-set SET1 esp-3des esp-md5-hmac 
+ mode tunnel
+crypto ipsec profile IP1
+ set transform-set SET1 
+
+interface tunnel 100
+tunnel protection ipsec profile IP1</code></pre>
+</section>
+<section id="dmvpn-hub-configuration-phase-2" class="level1">
+<h1>DMVPN HUB Configuration Phase 2</h1>
 <pre><code>#Same has phase 1 add the following
+interface tunnel 100
  no ip next-hop-self eigrp 1</code></pre>
 </section>
-<section id="dmvpn-spoke1-configuration-phage-2" class="level1">
-<h1>DMVPN Spoke1 Configuration Phage 2</h1>
+<section id="dmvpn-spoke1-configuration-phase-2" class="level1">
+<h1>DMVPN Spoke1 Configuration Phase 2</h1>
 <pre><code>#Same has phase 1 add the following
  tunnel mode gre multipoint</code></pre>
 </section>
-<section id="dmvpn-hub-configuration-phage-2-no-ipsec-1" class="level1">
-<h1>DMVPN HUB Configuration Phage 2 No IPSEC</h1>
+<section id="dmvpn-hub-configuration-phase-3" class="level1">
+<h1>DMVPN HUB Configuration Phase 3</h1>
 <pre><code>#Same has phase 1+2 add the following
  ip nhrp redirect</code></pre>
 </section>
-<section id="dmvpn-spoke1-configuration-phage-2-1" class="level1">
-<h1>DMVPN Spoke1 Configuration Phage 2</h1>
+<section id="dmvpn-spoke1-configuration-phase-3" class="level1">
+<h1>DMVPN Spoke1 Configuration Phase 3</h1>
 <pre><code>#Same has phase 1+2 add the following
  ip nhrp shortcut</code></pre>
+</section>
+<section id="dmvpn-lab" class="level1">
+<h1>DMVPN Lab</h1>
 <p><img src="images/dmvpn-lab-01.png" class="img-fluid" data-fig-align="center"><br>
 </p>
-<p><a href="attachements/dmvpn-lab-01_clean.zip">dmvpn-lab-01_clean.zip</a><br>
-.</p>
+<p>EVE-NG Typologies without DMVPN configuration, basic connectivity done.<br>
+<a href="attachements/dmvpn-lab-01_clean.zip">dmvpn-lab-01_clean.zip</a><br>
+</p>
 
 
 </section>
