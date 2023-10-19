@@ -171,7 +171,7 @@ website:
                     - Embedded Packet Capture
       - section: Cisco Firepower   
         contents: 
-          - href: Firepower_notes.qmd
+          - href: firepower_notes.qmd
             text: "FTD Notes"
         
    
