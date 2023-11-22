@@ -29,6 +29,7 @@ Designed for Hub and Spoke communications only.\
 -   Spoke can now use shortcut: NHRP is allowed to overwrite CEF.
 
 # DMVPN HUB Configuration Phase 1 No IPSEC
+
 Production environment use VRF.This configuration doesn't include them.\
 
 ```         
