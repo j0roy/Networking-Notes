@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-08-01">
+<meta name="dcterms.date" content="2023-11-22">
 
 <title>Jo’s Networking Notes - dmvpn_concept</title>
 <style>
@@ -695,7 +695,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 1, 2023</p>
+      <p class="date">November 22, 2023</p>
     </div>
   </div>
   
@@ -707,7 +707,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="dmvpn-concept" class="level1">
 <h1>DMVPN Concept</h1>
-<p>TThe Dynamic Multipoint VPN (DMVPN) feature combines GRE tunnels, IPsec encryption, and NHRP routing.<br>
+<p>Dynamic Multipoint VPN (DMVPN) feature combines GRE tunnels, IPsec encryption, and NHRP routing.<br>
 <a href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_dmvpn/configuration/15-mt/sec-conn-dmvpn-15-mt-book/sec-conn-dmvpn-dmvpn.html">Source cisco.com</a> Three phase exist and each of them add functionnality to the last phase. Similar to version.</p>
 </section>
 <section id="dmvpn-phase-1" class="level1">
@@ -736,6 +736,8 @@ Next-hop point to spoke instead of hub.<br>
 </section>
 <section id="dmvpn-hub-configuration-phase-1-no-ipsec" class="level1">
 <h1>DMVPN HUB Configuration Phase 1 No IPSEC</h1>
+<p>Production environment use VRF.This configuration doesn’t include them.<br>
+</p>
 <pre><code>interface GigabitEthernet0/0
  ip address 1.10.10.1 255.255.255.0
 !

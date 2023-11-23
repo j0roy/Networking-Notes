@@ -30,7 +30,7 @@ Designed for Hub and Spoke communications only.\
 
 # DMVPN HUB Configuration Phase 1 No IPSEC
 
-Production environment use VRF.This configuration doesn't include them.\
+Production environment use VRF.This configuration doesn't include them. \
 
 ```         
 interface GigabitEthernet0/0
