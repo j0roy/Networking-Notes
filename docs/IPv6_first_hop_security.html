@@ -721,9 +721,9 @@ DHCPv6</p>
 <section id="ipv6-first-hop-security-features" class="level1">
 <h1>IPv6 First Hop security features</h1>
 <p>IPv6 snooping: Build a database of layer 2 and layer 3 addressing correlation through IPv6 neighbor discovery or DHCPv6(if used). (similar to DAI)</p>
-<p>1.RA(Router Advertisement) Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.</p>
-<p>2.DHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.</p>
-<p>3.IPv6 Source-guard: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.</p>
+<p>1.RA Guard (Router Advertisement): Prevent spoofing of router and/or prefix and/or flags on the segment. Limiting RA to trusted port.</p>
+<p>2.DHCPv6 Guard: Prevent DHCPv6 server spoofing. Limiting DHCPv6 packet to trusted port.(Similar to ipv6 dhcp snooping)</p>
+<p>3.IPv6 Source-guard: Data plane filter. Relies on IPv6 snooping/static binding to create the binding table. Creates automatic IPv6 PACL to filter sources base on binding table.Prevent spoof IPv6 address.</p>
 
 
 </section>
