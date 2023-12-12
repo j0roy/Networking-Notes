@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-08-01">
+<meta name="dcterms.date" content="2023-12-12">
 
 <title>Jo’s Networking Notes - IPv6 First Hop security features</title>
 <style>
@@ -686,7 +686,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 1, 2023</p>
+      <p class="date">December 12, 2023</p>
     </div>
   </div>
   
@@ -720,10 +720,10 @@ DHCPv6</p>
 </section>
 <section id="ipv6-first-hop-security-features" class="level1">
 <h1>IPv6 First Hop security features</h1>
-<p>IPv6 snooping: Build from DHCPv6 and NDP messages. (similar to DAI) Build a database of layer 2 and layer 3 addressing correlation through IPv6 neighbor discovery. Prevent host spoofing on the segment On Vlan or on interface.</p>
-<p>RA(Router Advertisement) Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.</p>
-<p>DHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.</p>
-<p>IPv6 Source-guard: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.</p>
+<p>IPv6 snooping: Build a database of layer 2 and layer 3 addressing correlation through IPv6 neighbor discovery or DHCPv6(if used). (similar to DAI)</p>
+<p>1.RA(Router Advertisement) Guard: Prevent spoofing of router and prefix on the segment. On Vlan or on interface.</p>
+<p>2.DHCPv6 Guard: Prevent DHCPv6 server spoofing On Vlan or on interface.</p>
+<p>3.IPv6 Source-guard: Data plane filter. Relies on IPv6 snooping to create the binding table, Creates automatic IPv6 PACL to filter sources base on binding table.</p>
 
 
 </section>

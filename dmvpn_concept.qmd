@@ -15,7 +15,7 @@ Dynamic Multipoint VPN (DMVPN) feature combines GRE tunnels, IPsec encryption, a
 Designed for Hub and Spoke communications only.\
 - Spokes talk to each other through the hub.\
 
-# DMVPN Phase 2
+# DMVPN Phase 2 
 
 -   Spoke to Spoke communications are now working since they are using mGRE tunnel.\
     mGRE everywhere.\
