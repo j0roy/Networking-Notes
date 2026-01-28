@@ -5,7 +5,7 @@ date: last-modified
 date-format: long
 ---
 
-# IPv6 Address feature:
+# IPv6 Address feaµture:
 
 ICMPv6 Neighbor Discovery (ND)\
 NS Neighbor soliciation\
@@ -17,7 +17,7 @@ Stateless address autoconfiguration SLAAC(EUI-64)\
 DHCPv6
 
 # ND for new hosts on the network
-
+µ
 1.Asign a link-local address\
 2.Check if link-local address is unique (DAD)\
 3.Announce it self as a live host,link-local. (NA)\

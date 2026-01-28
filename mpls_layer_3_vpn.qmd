@@ -43,3 +43,5 @@ show bgp vpnv4 unicast vrf GUEST_01 labels
 ```
 
 [Source packetlife.net](https://packetlife.net/blog/2013/jun/10/route-distinguishers-and-route-targets)
+
+[Good lab gns3vault.com](https://gns3vault.com/mpls/basic-mpls-vpn)
